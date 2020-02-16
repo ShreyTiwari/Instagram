@@ -72,7 +72,7 @@ class Instagram:
 
     def goToHomePage(self):
         driver = self.driver
-        profile_button = driver.find_element_by_xpath("//a[@href='/shrey_twr/']")
+        profile_button = driver.find_element_by_xpath("//a[@href='/"+self.username+"/']")
         profile_button.click()
         time.sleep(2)
 
@@ -87,7 +87,7 @@ class Instagram:
         number_of_followers = (driver.find_element_by_xpath("/html/body/div[1]/section/main/div/header/section/ul/li[2]/a/span")).text
         print("You have", number_of_followers, "followers!\n")
 
-        followers_button = driver.find_element_by_xpath("//a[@href='/shrey_twr/followers/']")
+        followers_button = driver.find_element_by_xpath("//a[@href='/"+self.username+"/followers/']")
         followers_button.click()
         time.sleep(2)
 
@@ -149,7 +149,7 @@ class Instagram:
         number_of_people_following = (driver.find_element_by_xpath("/html/body/div[1]/section/main/div/header/section/ul/li[3]/a/span")).text
         print("You are following", number_of_people_following, "accounts!\n")
 
-        followers_button = driver.find_element_by_xpath("//a[@href='/shrey_twr/following/']")
+        followers_button = driver.find_element_by_xpath("//a[@href='/"+self.username+"/following/']")
         followers_button.click()
         time.sleep(2)
 
